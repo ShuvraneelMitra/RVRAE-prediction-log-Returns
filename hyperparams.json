@@ -1,0 +1,46 @@
+{
+	"DATA" : {
+		"WINDOW_SIZE" : 30,
+		"TRAIN_SIZE" : 0.8,
+		"TEST_SIZE" : 0.2,
+		"NUM_STOCKS" : 25
+	},
+
+	"TRAINING" : {
+		"BATCH_SIZE" : 64,
+		"LEARNING_RATE" : 0.01,
+		"MOMENTUM" : 0,
+		"LR_DECAY" : 0,
+		"LAMBDA" : 0,
+		"NUM_EPOCHS" : 50,
+		"KL_LOSS_WEIGHT" : 1
+	},
+
+	"FACTOR_NETWORK" : {
+		"ENCODER":{
+			"TYPE" : "LSTM",
+			"PARAMS" : {
+				"NUM_LAYERS" : 1,
+				"INPUT_SIZE" : [10, 25],
+				"HIDDEN_SIZE" : 100,
+				"BIAS" : true,
+				"DROPOUT_PROB" : 0,
+				"NUM_LAGS" : 10
+			}
+		},
+
+		"DECODER":{
+			"TYPE" : "LSTM",
+			"PARAMS" : {
+				"NUM_LAYERS" : 1,
+				"INPUT_SIZE" : [10, 25],
+				"HIDDEN_SIZE" : 25,
+				"BIAS" : true,
+				"DROPOUT_PROB" : 0.1,
+				"NUM_LAGS" : 10
+			}
+		},
+
+		"NUM_FACTORS" : 6
+	}
+}
