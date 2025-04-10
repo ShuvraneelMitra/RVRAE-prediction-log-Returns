@@ -1,3 +1,5 @@
 data.zip
 Resources.zip
 **/.idea
+*.zip
+__pycache__/*
